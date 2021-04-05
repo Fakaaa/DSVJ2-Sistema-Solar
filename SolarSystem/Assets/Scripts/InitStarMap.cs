@@ -20,7 +20,7 @@ public class InitStarMap : MonoBehaviour
             planets[i] = Instantiate(prefabPlanet, sun.transform.parent).gameObject.GetComponent<Planet>();
             planets[i].transform.position = new Vector3(sun.transform.position.x + (distanceBetweenPlanets * (i + 1))
                 , sun.transform.position.y, sun.transform.position.z);
-            planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(2, 4),
+            planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(3.0f, 10.0f),
             Random.Range(0.5f, 3.0f), inMat[Random.Range(0, inMat.Length)]);
         }
     }

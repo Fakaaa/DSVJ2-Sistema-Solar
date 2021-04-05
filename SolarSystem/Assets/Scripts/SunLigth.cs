@@ -17,7 +17,6 @@ public class SunLigth : MonoBehaviour
         sunLigth = gameObject.GetComponent<Light>() as Light;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!decrease)
@@ -30,7 +29,6 @@ public class SunLigth : MonoBehaviour
         if(val <= minVal)
             decrease = false;
 
-        Debug.Log("Value: " + val);
         sunLigth.intensity = Mathf.Sin(val);
     }
 }

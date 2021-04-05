@@ -12,15 +12,14 @@ public class Planet : MonoBehaviour
 
     void Update()
     {
-        //Vector3 v3 = Vector3.zero;
-        //anglePlanet += traslationSpeedPlanet * Time.deltaTime;
-        //
-        //v3.x = radiusPlanet * Mathf.Cos(anglePlanet);
-        //v3.z = radiusPlanet * Mathf.Sin(anglePlanet);
-        //
-        //transform.position = v3;
-        //transform.Rotate(Vector3.up * Time.deltaTime * rotSpeedPlanet);
-
+        Vector3 v3 = Vector3.zero;
+        anglePlanet += traslationSpeedPlanet * Time.deltaTime;
+        
+        v3.x = radiusPlanet * Mathf.Cos(anglePlanet);
+        v3.z = radiusPlanet * Mathf.Sin(anglePlanet);
+        
+        transform.position = v3;
+        transform.Rotate(Vector3.up * Time.deltaTime * rotSpeedPlanet);
     }
 
     public void SetUp(float radius, float scale, float rotSpeed, float transSpeed, Material newMat)

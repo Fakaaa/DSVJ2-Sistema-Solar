@@ -240,8 +240,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   sun: {fileID: 5927054419005407621, guid: a98d7c4fdf7905b4fbcb1812f2c84407, type: 3}
-  distanceBetweenPlanets: 8
+  distanceBetweenPlanets: 1
   inMat:
   - {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
   - {fileID: 2100000, guid: e032db9fd095fcd43a04fc7609e69f1d, type: 2}
