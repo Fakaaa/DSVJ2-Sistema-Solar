@@ -233,15 +233,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ddbf97a5ec0e34c871137e30ca284b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabPlanet: {fileID: 1393522735514653188, guid: d637f78ca4ab4f54cbdead4ba528a331,
+    type: 3}
   planets:
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
-  - {fileID: 1393522735514653191, guid: d637f78ca4ab4f54cbdead4ba528a331, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   sun: {fileID: 5927054419005407621, guid: a98d7c4fdf7905b4fbcb1812f2c84407, type: 3}
-  distanceBetweenPlanets: 5
+  distanceBetweenPlanets: 8
+  inMat:
+  - {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
+  - {fileID: 2100000, guid: e032db9fd095fcd43a04fc7609e69f1d, type: 2}
+  - {fileID: 2100000, guid: da39d527f1ac41349859802ace61e25f, type: 2}
+  - {fileID: 2100000, guid: f16c41a153a382d40a7e6af1ab777309, type: 2}
+  - {fileID: 2100000, guid: 453ab33af4bce6740843d79b29dc8f81, type: 2}
+  - {fileID: 2100000, guid: cde2d77c604ccef47b0a0050137b3c87, type: 2}
+  - {fileID: 2100000, guid: 35dd1cb4ed3ee154fa3fe65be52d148c, type: 2}
+  - {fileID: 2100000, guid: 2c724233fbbe07b4085746aebdbd6363, type: 2}
+  - {fileID: 2100000, guid: be58695aaee88ea498b53b6961f17232, type: 2}
 --- !u!4 &477449083
 Transform:
   m_ObjectHideFlags: 0
@@ -272,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1440513690
 Light:
   m_ObjectHideFlags: 0

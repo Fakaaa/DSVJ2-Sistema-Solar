@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393522735514653188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.9, y: 36.2, z: -108.1}
+  m_LocalPosition: {x: 10, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,8 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a8741ec152bf7342bc6c8b32508797c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inRadius: 2
-  inScale: 1
-  inRotSpeed: 2
-  inTransSpeed: 1
-  inMat: {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
+  radiusPlanet: 0
+  rotSpeedPlanet: 0
+  traslationSpeedPlanet: 0
+  scalePlanet: 0
+  anglePlanet: 0
+  mat: {fileID: 0}
