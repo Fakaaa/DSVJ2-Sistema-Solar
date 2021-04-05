@@ -52,7 +52,7 @@ public class FocusPlanet : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             index = 7;
-            offset *= 2;
+            offset *= 0.5f;
         }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {

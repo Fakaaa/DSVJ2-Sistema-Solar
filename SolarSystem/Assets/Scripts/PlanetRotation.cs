@@ -36,7 +36,7 @@ public class PlanetRotation : MonoBehaviour
                 transform.Rotate(Vector3.up * Time.deltaTime * rotSpeed);
                 break;
             case "Z":
-                transform.Rotate(Vector3.forward * Time.deltaTime * rotSpeed);
+                transform.Rotate(Vector3.forward * Time.deltaTime * rotSpeed); 
                 break;
         }
     }
