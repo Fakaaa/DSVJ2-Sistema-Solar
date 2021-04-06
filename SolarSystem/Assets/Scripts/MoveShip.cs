@@ -9,7 +9,6 @@ public class MoveShip : MonoBehaviour
     private Rigidbody spaceShip;
     private Vector3 movementVec;
     private float angle;
-    private int xAngle = 90;
 
     private void Start()
     {
@@ -25,12 +24,12 @@ public class MoveShip : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
         {
             angle += Time.deltaTime * rotSpeed;
-            transform.rotation = Quaternion.Euler(new Vector3(xAngle, transform.rotation.y, angle));
+            transform.rotation = Quaternion.Euler(new Vector3(0, angle, transform.rotation.z));
         }
         if (Input.GetKey(KeyCode.E))
         {
             angle -= Time.deltaTime * rotSpeed;
-            transform.rotation = Quaternion.Euler(new Vector3(xAngle, transform.rotation.y, angle));
+            transform.rotation = Quaternion.Euler(new Vector3(0, angle, transform.rotation.z));
         }
     }
     void FixedUpdate()
