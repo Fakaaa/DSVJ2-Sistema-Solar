@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-     [SerializeField] private float radiusPlanet;
-     [SerializeField] private float rotSpeedPlanet;
-     [SerializeField] private float traslationSpeedPlanet;
-     [SerializeField] private float scalePlanet;
-     [SerializeField] private float anglePlanet;
+    [SerializeField] private float radiusPlanet;
+    [SerializeField] private float rotSpeedPlanet;
+    [SerializeField] private float traslationSpeedPlanet;
+    [SerializeField] private float scalePlanet;
+    [SerializeField] private float anglePlanet;
+
 
     void Update()
     {
         Vector3 v3 = Vector3.zero;
         anglePlanet += traslationSpeedPlanet * Time.deltaTime;
-        
+
         v3.x = radiusPlanet * Mathf.Cos(anglePlanet);
         v3.z = radiusPlanet * Mathf.Sin(anglePlanet);
-        
+
         transform.position = v3;
         transform.Rotate(Vector3.up * Time.deltaTime * rotSpeedPlanet);
     }

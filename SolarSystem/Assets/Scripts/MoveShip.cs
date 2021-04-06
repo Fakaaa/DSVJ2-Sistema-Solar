@@ -5,41 +5,36 @@ using UnityEngine;
 public class MoveShip : MonoBehaviour
 {
     [SerializeField] float shipSpeed;
+    [SerializeField] float rotSpeed;
+    private Rigidbody spaceShip;
+    private Vector3 movementVec;
+    private float angle;
+    private int xAngle = 90;
 
+    private void Start()
+    {
+        spaceShip = gameObject.GetComponent<Rigidbody>();
+        movementVec = Vector3.zero;
+        angle = transform.rotation.z;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.position += new Vector3(0,0, (shipSpeed*0.5f) * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.position -= new Vector3(0, 0, (shipSpeed * 0.5f) * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position -= new Vector3((shipSpeed * 0.5f) * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += new Vector3((shipSpeed * 0.5f) * Time.deltaTime, 0, 0);
-        }
+        movementVec = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0, 0, shipSpeed * Time.deltaTime);
+            angle += Time.deltaTime * rotSpeed;
+            transform.rotation = Quaternion.Euler(new Vector3(xAngle, transform.rotation.y, angle));
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0, 0, -shipSpeed * Time.deltaTime);
+            angle -= Time.deltaTime * rotSpeed;
+            transform.rotation = Quaternion.Euler(new Vector3(xAngle, transform.rotation.y, angle));
         }
-        if(Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Rotate(-shipSpeed * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Rotate(shipSpeed * Time.deltaTime, 0, 0);
-        }
+    }
+    void FixedUpdate()
+    {
+        spaceShip.AddForce((movementVec * shipSpeed) * Time.deltaTime);
     }
 }
