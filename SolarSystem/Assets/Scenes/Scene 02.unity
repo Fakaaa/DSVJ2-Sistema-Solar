@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 423410020}
   - component: {fileID: 423410019}
   - component: {fileID: 423410018}
+  - component: {fileID: 423410021}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -197,13 +198,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423410017}
-  m_LocalRotation: {x: -0.68165517, y: -0, z: -0, w: 0.7316736}
-  m_LocalPosition: {x: 0, y: -19.100067, z: -8.000034}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalRotation: {x: 0.03536838, y: -0, z: -0, w: 0.99937433}
+  m_LocalPosition: {x: 0, y: 1.600008, z: -3.8200152}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1654282822}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -85.94601, y: 0, z: 0}
+--- !u!114 &423410021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423410017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d2c00a11e8ba64b84a382642813388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: {fileID: 1654282819}
+  offset: {x: 0, y: 0, z: -10}
+  planetList: []
 --- !u!1 &477449081
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,11 +257,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   sun: {fileID: 5927054419005407621, guid: a98d7c4fdf7905b4fbcb1812f2c84407, type: 3}
-  distanceBetweenPlanets: 1
+  distanceBetweenPlanets: 2
   inMat:
   - {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
   - {fileID: 2100000, guid: e032db9fd095fcd43a04fc7609e69f1d, type: 2}
@@ -256,6 +269,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 35dd1cb4ed3ee154fa3fe65be52d148c, type: 2}
   - {fileID: 2100000, guid: 2c724233fbbe07b4085746aebdbd6363, type: 2}
   - {fileID: 2100000, guid: be58695aaee88ea498b53b6961f17232, type: 2}
+  planetsOnScene: {fileID: 423410021}
 --- !u!4 &477449083
 Transform:
   m_ObjectHideFlags: 0
@@ -268,7 +282,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &802084847
 PrefabInstance:
@@ -283,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439242, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 439242, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}
       propertyPath: m_LocalScale.y
@@ -303,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439242, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 439242, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -425,7 +439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1654282819 stripped
 GameObject:
@@ -447,9 +461,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipSpeed: 300
   rotSpeed: 60
---- !u!4 &1654282822 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 439242, guid: c9816fa979b06ba4e9c222b529370cc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 802084847}
-  m_PrefabAsset: {fileID: 0}

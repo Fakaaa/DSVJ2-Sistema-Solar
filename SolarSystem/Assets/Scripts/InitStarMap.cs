@@ -5,10 +5,11 @@ using UnityEngine;
 public class InitStarMap : MonoBehaviour
 {
     [SerializeField] GameObject prefabPlanet;
-    [SerializeField] Planet [] planets;
+    [SerializeField] public Planet [] planets;
     [SerializeField] SunLigth sun;
     [SerializeField] float distanceBetweenPlanets;
     [SerializeField] private Material [] inMat;
+    public FocusPlanet planetsOnScene;
 
     void Awake()
     {
@@ -22,7 +23,9 @@ public class InitStarMap : MonoBehaviour
                 , sun.transform.position.y, sun.transform.position.z);
             planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(3.0f, 10.0f),
             Random.Range(0.5f, 3.0f), inMat[Random.Range(0, inMat.Length)]);
+
         }
+        planetsOnScene.SetPlanetsList(planets, planets.Length);
     }
 
     private void Update()
