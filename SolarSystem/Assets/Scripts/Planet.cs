@@ -10,7 +10,7 @@ public class Planet : MonoBehaviour
     [SerializeField] private float scalePlanet;
     [SerializeField] private float anglePlanet;
 
-
+    private MeshRenderer aux;
     void Update()
     {
         Vector3 v3 = Vector3.zero;
@@ -30,7 +30,8 @@ public class Planet : MonoBehaviour
         rotSpeedPlanet = rotSpeed;
         traslationSpeedPlanet = transSpeed;
         anglePlanet = 0;
-        MeshRenderer aux = gameObject.GetComponent<MeshRenderer>();
+
+        aux = gameObject.GetComponent<MeshRenderer>();
         aux.material = newMat;
     }
 
