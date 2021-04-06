@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e436656c294609e42bae0ed9f69bd4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 500
+  shipSpeed: 2000
   rotSpeed: 100
 --- !u!54 &870420883
 Rigidbody:
