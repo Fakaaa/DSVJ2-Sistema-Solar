@@ -10,6 +10,8 @@ public class Planet : MonoBehaviour
     [SerializeField] private float scalePlanet;
     [SerializeField] private float anglePlanet;
 
+    [SerializeField] public bool weirdMode;
+
     private MeshRenderer aux;
     void Update()
     {
@@ -17,6 +19,8 @@ public class Planet : MonoBehaviour
         anglePlanet += traslationSpeedPlanet * Time.deltaTime;
 
         v3.x = radiusPlanet * Mathf.Cos(anglePlanet);
+        if(weirdMode)
+            v3.y = radiusPlanet * Mathf.Sin(anglePlanet / 8);
         v3.z = radiusPlanet * Mathf.Sin(anglePlanet);
 
         transform.position = v3;

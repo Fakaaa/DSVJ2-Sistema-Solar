@@ -258,9 +258,12 @@ MonoBehaviour:
   planets:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   meteors: []
   sun: {fileID: 5927054419005407621, guid: a98d7c4fdf7905b4fbcb1812f2c84407, type: 3}
-  distanceBetweenPlanets: 1
+  distanceBetweenPlanets: 15
   inMat:
   - {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
   - {fileID: 2100000, guid: e032db9fd095fcd43a04fc7609e69f1d, type: 2}
@@ -272,11 +275,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2c724233fbbe07b4085746aebdbd6363, type: 2}
   - {fileID: 2100000, guid: be58695aaee88ea498b53b6961f17232, type: 2}
   planetsOnScene: {fileID: 423410021}
-  amountMeteorsIncoming: 10
-  speedMeteors: 15
+  amountMeteorsIncoming: 200
+  speedMeteors: 10
   timeToMeteorRain: 2
   timer: 0
   stillCreatingMeteors: 0
+  weirdMode: 0
 --- !u!4 &477449083
 Transform:
   m_ObjectHideFlags: 0

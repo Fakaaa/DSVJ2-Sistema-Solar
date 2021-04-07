@@ -19,6 +19,8 @@ public class InitStarMap : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] bool stillCreatingMeteors;
 
+    [SerializeField] bool weirdMode;
+
     void Awake()
     {
         Instantiate(sun, transform.parent);
@@ -30,8 +32,18 @@ public class InitStarMap : MonoBehaviour
             planets[i] = Instantiate(prefabPlanet, sun.transform.parent).gameObject.GetComponent<Planet>();
             planets[i].transform.position = new Vector3(sun.transform.position.x + (distanceBetweenPlanets * (i + 1))
                 , sun.transform.position.y + (Random.Range(-10, 10)), sun.transform.position.z);
-            planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(7.0f, 20.0f),
-            Random.Range(1.1f, 3.0f), inMat[Random.Range(0, inMat.Length)]);
+            if (!weirdMode)
+            {
+                planets[i].weirdMode = false;
+                planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(7.0f, 20.0f),
+                Random.Range(0.1f, 0.9f), inMat[Random.Range(0, inMat.Length)]);
+            }
+            else
+            {
+                planets[i].weirdMode = true;
+                planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(7.0f, 20.0f),
+                Random.Range(1.0f, 7.0f), inMat[Random.Range(0, inMat.Length)]);
+            }
 
         }
         planetsOnScene.SetPlanetsList(planets, planets.Length);
@@ -51,7 +63,11 @@ public class InitStarMap : MonoBehaviour
             timer = 0;
             for (int i = 0; i < amountMeteorsIncoming; i++)
             {
-                meteors.Add(Instantiate(metorPrefab, new Vector3(Random.Range(-300, 300), Random.Range(-50, 50), Random.Range(-200, 200)), Quaternion.identity));
+                meteors.Add(Instantiate(metorPrefab, new Vector3(Random.Range(-1000, 1000), Random.Range(-50, 50), Random.Range(-1000, 1000)), Quaternion.identity));
+            }
+            for (int i = 0; i < meteors.Count; i++)
+            {
+                meteors[i].SetMeteorVariety(new Vector3(Random.Range(1, 4), Random.Range(3, 5), Random.Range(1, 10)));
             }
             stillCreatingMeteors = false;
         }
@@ -59,7 +75,24 @@ public class InitStarMap : MonoBehaviour
         for (int i = 0; i < meteors.Count; i++)
         {
             if (meteors[i] != null)
-                meteors[i].MoveMeteor(speedMeteors, sun.transform.position);
+            {
+                if (weirdMode)
+                {
+                    for (int j = 0; j < planets.Length; j++)
+                    {
+                        meteors[i].MoveMeteor(speedMeteors, planets[j].transform.position);
+                    }
+                }
+                else
+                    meteors[i].MoveMeteor(speedMeteors, sun.transform.position);
+
+                if (meteors[i].crash)
+                {
+                    GameObject.Destroy(meteors[i].gameObject);
+                    meteors.RemoveAt(i);
+                }
+            }
         }
+
     }
 }
