@@ -99,7 +99,7 @@ MonoBehaviour:
   rotSpeedPlanet: 0
   traslationSpeedPlanet: 0
   scalePlanet: 0
-  anglePlanet: 0
+  anglePlanet: 30
 --- !u!96 &2162852677628064181
 TrailRenderer:
   serializedVersion: 2
