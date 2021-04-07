@@ -8,7 +8,7 @@ public class BlendPlanets : MonoBehaviour
     {
         Color blendPlanet = gameObject.GetComponent<MeshRenderer>().material.color;
 
-        Debug.Log("Entro bro");
+        Debug.Log("Entro ");
         blendPlanet.a = 0.5f;
         gameObject.GetComponent<MeshRenderer>().material.color = new Color(blendPlanet.r, blendPlanet.g, blendPlanet.b, blendPlanet.a);
 
@@ -18,7 +18,7 @@ public class BlendPlanets : MonoBehaviour
     {
         Color blendPlanet = gameObject.GetComponent<MeshRenderer>().material.color;
 
-        Debug.Log("Salio bro");
+        Debug.Log("Salio ");
         blendPlanet.a = 1.0f;
         gameObject.GetComponent<MeshRenderer>().material.color = new Color(blendPlanet.r, blendPlanet.g, blendPlanet.b, blendPlanet.a);
 

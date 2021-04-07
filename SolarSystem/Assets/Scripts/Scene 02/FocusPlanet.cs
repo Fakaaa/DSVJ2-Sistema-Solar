@@ -6,6 +6,8 @@ public class FocusPlanet : MonoBehaviour
 {
     //---
     [SerializeField] GameObject ship;
+    [SerializeField] GameObject shipCamera;
+    [SerializeField] GameObject mainCamera;
     [SerializeField] Vector3 offset;
     //---
     public List<GameObject> planetList;
@@ -20,14 +22,9 @@ public class FocusPlanet : MonoBehaviour
     private void Start()
     {
         auxOffset = offset;
-        onShip = true;
-        planetSelect = false;
+        onShip = false;
+        planetSelect = true;
         index = 0;
-        auxPosCam = transform.position;
-        auxRotCam = transform.rotation;
-
-
-        transform.parent = ship.transform;
     }
     private void Update()
     {
@@ -98,26 +95,32 @@ public class FocusPlanet : MonoBehaviour
         {
             onShip = true;
             planetSelect = false;
-            transform.position = auxPosCam;
-            transform.rotation = auxRotCam;
-
-            transform.position = ship.transform.position + offset;
         }
 
     }
     void LateUpdate()
     {
-        if (!onShip)
+        //if (!onShip)
+        //{
+        //    transform.parent = null;
+        //    transform.position = auxPosCam;
+        //    transform.rotation = auxRotCam;
+        //}
+        //else
+        //    transform.parent = ship.transform;
+        if(onShip && !planetSelect)
         {
-            transform.parent = null;
-            transform.position = auxPosCam;
-            transform.rotation = auxRotCam;
+            mainCamera.gameObject.SetActive(false);
+            shipCamera.gameObject.SetActive(true);
         }
-        else
-            transform.parent = ship.transform;
+        if (!onShip && planetSelect)
+        {
+            mainCamera.gameObject.SetActive(true);
+            shipCamera.gameObject.SetActive(false);
+        }
 
         if (index < planetList.Count && planetList[index] != null && planetSelect)
-            transform.position = planetList[index].transform.position + offset;
+            mainCamera.transform.position = planetList[index].transform.position + offset;
     }
     public void SetPlanetsList(Planet [] planets, int tamList)
     {
