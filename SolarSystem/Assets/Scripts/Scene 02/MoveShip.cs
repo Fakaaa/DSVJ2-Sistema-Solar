@@ -68,11 +68,11 @@ public class MoveShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetKey(KeyCode.N))
+        if (Input.GetKey(KeyCode.Space))
         {
             spaceShip.AddForce(transform.right * (shipSpeed));
         }
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKey(KeyCode.V))
         {
             spaceShip.AddForce(transform.right * -(shipSpeed));
         }

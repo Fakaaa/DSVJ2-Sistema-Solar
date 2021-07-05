@@ -153,7 +153,7 @@ MonoBehaviour:
   ship: {fileID: 870420880}
   shipCamera: {fileID: 2034962257}
   mainCamera: {fileID: 423410017}
-  offset: {x: 0, y: 2, z: -10}
+  offset: {x: 0, y: 2, z: -250}
   planetList: []
   auxPosCam: {x: 0, y: 0, z: 0}
   auxRotCam: {x: 0, y: 0, z: 0, w: 0}
@@ -452,7 +452,7 @@ MonoBehaviour:
   - {fileID: 0}
   meteors: []
   sun: {fileID: 5927054419005407621, guid: a98d7c4fdf7905b4fbcb1812f2c84407, type: 3}
-  distanceBetweenPlanets: 15
+  distanceBetweenPlanets: 200
   inMat:
   - {fileID: 2100000, guid: 02c444f92c747de4bbfdc0ca30f26548, type: 2}
   - {fileID: 2100000, guid: e032db9fd095fcd43a04fc7609e69f1d, type: 2}
@@ -469,7 +469,7 @@ MonoBehaviour:
   timeToMeteorRain: 2
   timer: 0
   stillCreatingMeteors: 0
-  weirdMode: 1
+  weirdMode: 0
 --- !u!4 &477449083
 Transform:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870420880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: -1015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1654282822}
@@ -909,13 +909,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034962257}
-  m_LocalRotation: {x: 0.14688827, y: 0.6916819, z: -0.14688833, w: 0.69168186}
-  m_LocalPosition: {x: -3.23, y: 2.29, z: 0.03999996}
+  m_LocalRotation: {x: 0.063503586, y: 0.70424956, z: -0.063503616, w: 0.70424944}
+  m_LocalPosition: {x: -5.28, y: 3.05, z: 0.039978027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870420881}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 23.979002, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.305, y: 90.00001, z: 0}
 --- !u!81 &2034962259
 AudioListener:
   m_ObjectHideFlags: 0
@@ -948,7 +948,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 8000
   field of view: 60
   orthographic: 0
   orthographic size: 5

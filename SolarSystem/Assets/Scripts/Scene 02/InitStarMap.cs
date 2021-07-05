@@ -31,11 +31,11 @@ public class InitStarMap : MonoBehaviour
         {
             planets[i] = Instantiate(prefabPlanet, sun.transform.parent).gameObject.GetComponent<Planet>();
             planets[i].transform.position = new Vector3(sun.transform.position.x + (distanceBetweenPlanets * (i + 1))
-                , sun.transform.position.y + (Random.Range(-10, 10)), sun.transform.position.z);
+                , sun.transform.position.y + (Random.Range(-1010, 1010)), sun.transform.position.z);
             if (!weirdMode)
             {
                 planets[i].weirdMode = false;
-                planets[i].SetUp((i + 1) * 20, Random.Range(1.0f, 6.0f), Random.Range(7.0f, 20.0f),
+                planets[i].SetUp((i + 1) * 2500, Random.Range(50.0f, 200.0f), Random.Range(7.0f, 20.0f),
                 Random.Range(0.1f, 0.9f), inMat[Random.Range(0, inMat.Length)]);
             }
             else
